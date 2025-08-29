@@ -1,11 +1,361 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
+import CasinoCard from "../components/CasinoCard.astro";
+import ContentPanel from "../components/ContentPanel.astro";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+/** Ratings are entered on a 0–5 scale; convert to 0–10 for <CasinoCard>. */
+const casinosRaw = [
+  {
+    name: "888 Casino",
+    logo: "/888-casino.png",
+    offer:
+      "Certificação SRIJ para máxima confiança\n" +
+      "Transações blindadas com encriptação avançada\n" +
+      "Assistência especializada sempre disponível",
+    rating: 4.7,
+    votes: 980,              // 👈 add
+    link: "https://www.888.pt/",
+    accentTop: true,
+  },
+  {
+    name: "Betano",
+    logo: "/Betano-Logo.png",
+    offer:
+      "Certificação SRIJ para máxima confiança\n" +
+      "Transações blindadas com encriptação avançada\n" +
+      "Assistência especializada sempre disponível",
+    rating: 4.8,
+    votes: 1823,              // 👈 add
+    link: "https://www.betano.pt/",
+  },
+  {
+    name: "BacanaPlay",
+    logo: "/bacanaplay-logo.png",
+    offer:
+      "Certificação SRIJ para máxima confiança\n" +
+      "Transações blindadas com encriptação avançada\n" +
+      "Assistência especializada sempre disponível",
+    rating: 4.5,
+    votes: 756,               // 👈 add
+    link: "https://www.888.pt/",
+  },
+];
+
+
+/** Normalize ratings: if <=5, treat as /5 and convert to /10. */
+const casinos = casinosRaw.map((c) => {
+	const r = typeof c.rating === "string" ? parseFloat(c.rating) : c.rating;
+	const rating10 = r <= 5 ? r * 2 : r; // e.g., 4.8 -> 9.6
+	return { ...c, rating: rating10.toFixed(1) };
+});
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<BaseLayout>
+	<!-- HERO (full-bleed background) -->
+	<section class="hero-bg" aria-labelledby="hero-heading">
+		<div class="hero-inner">
+			<h2 id="hero-heading" class="hero-title">
+				Melhores Sites de Cassino Online
+			</h2>
+
+			<p class="hero-sub">
+				Descubra os melhores cassinos online licenciados em Portugal. Avaliações imparciais, segurança garantida e diversão sem limites.
+			</p>
+
+			<div class="cards">
+				{casinos.map((c) => <CasinoCard {...c} />)}
+			</div>
+		</div>
+	</section>
+
+	<!-- CONTENT -->
+	<ContentPanel title="Como Avaliamos os Cassinos em Destaque">
+		<!-- <p class="lead">
+			A nossa metodologia cobre critérios críticos para a sua segurança e
+			experiência:
+		</p> -->
+
+		<!-- EXACT “1)” NUMBERING -->
+		<ol class="num">
+			<li>
+				Licenciamento e regulamentação: só listamos operadores com licença ativa do SRIJ.
+			</li>
+			<li>
+				Segurança e proteção de dados: encriptação SSL, políticas de privacidade claras e auditorias.
+			</li>
+			<li>
+				Variedade de jogos: slots, mesa, casino ao vivo e fornecedores reconhecidos.
+			</li>
+			<li>
+				Bónus e promoções: termos transparentes, rollover justo e valor real.
+			</li>
+			<li>
+				Métodos de pagamento: opções populares em Portugal, rapidez de depósitos e levantamentos.
+			</li>
+			<li>
+				Suporte ao cliente: assistência em português, tempo de resposta e canais disponíveis.
+			</li>
+		</ol>
+
+		<h3 class="subhead">Por que escolher os nossos casinos</h3>
+		<ul class="bul">
+			<li>
+				Cassinos licenciados pelo SRIJ
+			</li>
+			<li>
+				Avaliações imparciais e detalhadas
+			</li>
+			<li>
+				Compromisso com o jogo responsável
+			</li>
+		</ul>
+
+		<!-- FAQ -->
+		<h2 class="faq-title">Perguntas Frequentes</h2>
+		<ul class="faq">
+			<li>
+				<span class="q"
+					>Como faço para me registrar em um cassino online?</span
+				>
+				<p class="a">
+					Normalmente, clique em “Registar”, preencha os seus dados, verifique o email e faça a validação KYC (documento de identidade e prova de morada).
+				</p>
+			</li>
+			<li>
+				<span class="q">Os cassinos apresentados são seguros?</span>
+				<p class="a">
+					Sim. Apenas recomendamos sites com licença SRIJ e protocolos de segurança atualizados.
+				</p>
+			</li>
+			<li>
+				<span class="q"
+					>Quais métodos de pagamento estão disponíveis?</span
+				>
+				<p class="a">
+					Cartão bancário, transferência, MB Way, carteiras eletrónicas e, em alguns casos, Paysafecard. A disponibilidade varia por operador.
+				</p>
+			</li>
+			<li>
+				<span class="q">•	Posso jogar no celular?</span>
+				<p class="a">
+					Sim. A maioria oferece sites responsivos e apps iOS/Android com a mesma segurança.
+				</p>
+			</li>
+			<li>
+				<span class="q">•	O que é o SRIJ?</span>
+				<p class="a">
+					É o Serviço de Regulação e Inspeção de Jogos, a autoridade que licencia e fiscaliza o jogo online em Portugal.
+				</p>
+			</li>
+		</ul>
+
+		<!-- Page-scoped styles just for this page content -->
+		<style>
+			/* Ensure consistent typography inside the panel */
+			.content-panel .cp-body {
+				font-family: "Helvetica Neue", Helvetica, Arial, system-ui,
+					sans-serif;
+				font-weight: 400;
+				font-style: normal;
+				font-size: 20px;
+				line-height: 28px;
+				letter-spacing: 0;
+				text-align: justify;
+				color: #111827;
+			}
+			.lead {
+				font-weight: 700;
+				color: #111827;
+				margin: 0 0 14px;
+			}
+
+			/* 1) numbering */
+			.num {
+				list-style: none;
+				margin: 0 0 8px;
+				padding: 0;
+				counter-reset: item;
+			}
+			.num > li {
+				position: relative;
+				counter-increment: item;
+				padding-left: 2.2rem;
+				margin: 0 0 16px;
+			}
+			.num > li::before {
+				content: counter(item) ")";
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 2rem;
+				text-align: right;
+				color: #ffffff;
+				font:
+					400 20px/28px "Helvetica Neue",
+					Helvetica,
+					Arial,
+					system-ui,
+					sans-serif;
+			}
+
+			/* subhead + simple bullets */
+			.subhead {
+				margin: 12px 0 8px;
+				font-weight: 700;
+				color: #ffffff;
+			}
+			.bul {
+				list-style: disc;
+				margin: 6px 0 0 1.35rem;
+				padding: 0;
+			}
+			.bul > li {
+				margin: 0 0 12px;
+			}
+			.bul > li::marker {
+				color: #ffffff;
+			}
+
+			/* FAQ styles matching screenshot */
+			.faq-title {
+				margin: 18px 0 10px;
+				padding-bottom: 10px;
+				border-bottom: 1px solid #d9dde3;
+				color: #ffffff;
+				font-weight: 700;
+				font-size: 28px;
+				line-height: 28px;
+				text-align: left;
+				margin-top: 2rem;
+			}
+			.faq {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+			}
+			.faq > li {
+				position: relative;
+				padding-left: 26px;
+				margin: 14px 0 18px;
+			}
+			.faq > li::before {
+				content: "";
+				position: absolute;
+				left: 0;
+				top: 0.7em;
+				width: 10px;
+				height: 10px;
+				border-radius: 9999px;
+				background: #ffffff;
+			}
+			.q {
+				display: block;
+				color: #ffffff;
+				font-weight: 700;
+				font-size: 20px;
+				line-height: 28px;
+				margin: 0 0 4px;
+				text-align: left;
+			}
+			.a {
+				margin: 0;
+				color: #c5c5c5;
+				font:
+					400 20px/28px "Helvetica Neue",
+					Helvetica,
+					Arial,
+					system-ui,
+					sans-serif;
+				letter-spacing: 0;
+				text-align: justify;
+			}
+
+			@media (max-width: 900px) {
+				.content-panel .cp-body {
+					font-size: 18px;
+					line-height: 26px;
+				}
+				.num > li::before,
+				.q,
+				.a {
+					font-size: 18px;
+					line-height: 26px;
+				}
+				.faq-title {
+					font-size: 24px;
+					line-height: 26px;
+				}
+			}
+
+			/* HERO */
+			.hero-bg {
+				position: relative;
+				width: 100vw;
+				left: 50%;
+				right: 50%;
+				margin-left: -50vw;
+				margin-right: -50vw;
+				/* background: #0a0f12 url("/bg.png") no-repeat center top/cover; */
+				padding: 48px 0 0;
+				overflow: hidden;
+			}
+			/* .hero-bg::after {
+				content: "";
+				position: absolute;
+				inset: 0;
+				background: radial-gradient(
+						ellipse at center,
+						rgba(0, 0, 0, 0) 45%,
+						rgba(0, 0, 0, 0.55) 100%
+					),
+					linear-gradient(
+						to bottom,
+						rgba(0, 0, 0, 0) 0%,
+						rgba(0, 0, 0, 0.25) 100%
+					);
+				pointer-events: none;
+			} */
+			.hero-inner {
+				position: relative;
+				z-index: 1;
+				max-width: 1120px;
+				margin: 0 auto;
+				padding: 0 16px;
+				font-family: "Helvetica Neue", Helvetica, Arial, system-ui,
+					sans-serif;
+				letter-spacing: 0;
+			}
+			.hero-title {
+				font-weight: 600;
+				font-size: 44px;
+				line-height: 1.25;
+				color: #fff;
+				margin: 0 0 16px;
+				display: inline-block;
+				padding-bottom: 10px;
+				border-bottom: 2px solid #c10c0c;
+			}
+			.hero-sub {
+				color: #f1f5f9;
+				font-size: 22px;
+				font-weight: 400;
+				line-height: 1.55;
+				margin: 0 0 28px;
+			}
+			.cards {
+				display: flex;
+				flex-direction: column;
+				row-gap: 12px;
+			}
+
+			@media (max-width: 900px) {
+				.hero-title {
+					font-size: 36px;
+				}
+				.hero-sub {
+					font-size: 20px;
+				}
+			}
+		</style>
+	</ContentPanel>
+</BaseLayout>

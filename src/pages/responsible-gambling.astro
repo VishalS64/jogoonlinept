@@ -1,0 +1,146 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ContentPanel from "../components/ContentPanel.astro";
+---
+
+<BaseLayout>
+  <p class="pt-4 navlink"><a href="/">Home</a> / <a href="/responsible-gambling">Responsible Gambling</a></p>
+  <p class="heads font-bold">Jogo Responsável</p>
+
+  <ContentPanel title="Jogo Responsável — jogoonlinept.com">
+    <div class="responsible">
+      <h2 id="introducao">Introdução</h2>
+      <p>
+        No <strong>jogoonlinept.com</strong>, acreditamos que o jogo deve ser uma forma de
+        entretenimento segura e controlada. O nosso compromisso é promover práticas de jogo
+        responsável, fornecer informação clara e apontar recursos de apoio. Apenas apresentamos
+        operadores licenciados pelo SRIJ, e incentivamos todos os utilizadores a jogar com
+        moderação, conhecendo os riscos e os limites pessoais.
+      </p>
+
+      <h2 id="o-que-e">O que é Jogo Responsável?</h2>
+      <p>
+        Jogo responsável é a prática de jogar de forma consciente, mantendo controlo sobre o
+        tempo e o dinheiro dedicados ao jogo e evitando que a atividade afete negativamente a
+        sua vida. Principais princípios:
+      </p>
+      <ul>
+        <li>Definir limites de tempo e de gasto antes de começar a jogar.</li>
+        <li>Jogar apenas com dinheiro destinado ao lazer, nunca com fundos necessários para despesas essenciais.</li>
+        <li>Reconhecer os sinais de risco e procurar ajuda quando necessário.</li>
+        <li>Respeitar as regras e a idade legal mínima.</li>
+        <li>Manter o jogo como entretenimento, não como forma de rendimento.</li>
+      </ul>
+
+      <h2 id="dicas">Dicas para Jogar de Forma Responsável</h2>
+      <ul>
+        <li><strong>Estabeleça um orçamento:</strong> defina um limite de depósitos e perdas e cumpra-o.</li>
+        <li><strong>Use ferramentas de controlo:</strong> ative limites de depósito, sessões temporizadas, períodos de pausa e autoexclusão nos operadores licenciados.</li>
+        <li><strong>Faça pausas regulares:</strong> evite sessões longas e marque tempos de descanso.</li>
+        <li><strong>Evite jogar sob stress:</strong> não jogue quando estiver cansado, ansioso, sob influência de álcool ou outras substâncias.</li>
+        <li><strong>Não persiga perdas:</strong> aceitar uma perda faz parte do jogo; tentar “recuperar” costuma agravar a situação.</li>
+        <li><strong>Separe finanças:</strong> use uma conta ou método de pagamento dedicado ao lazer para maior controlo.</li>
+        <li><strong>Informe-se:</strong> leia termos de bónus, probabilidades dos jogos e RTP para entender expectativas reais.</li>
+        <li><strong>Equilibre a rotina:</strong> mantenha hobbies, convívio social e responsabilidades fora do jogo.</li>
+      </ul>
+
+      <h2 id="sinais">Sinais de Problema com o Jogo</h2>
+      <p>Procure ajuda se reconhecer alguns destes sinais em si ou em alguém próximo:</p>
+      <ul>
+        <li>Perseguir perdas ou aumentar apostas para “compensar”.</li>
+        <li>Negligenciar trabalho, estudos, família ou finanças devido ao jogo.</li>
+        <li>Sentir ansiedade, irritação ou culpa relacionados com o jogo.</li>
+        <li>Mentir sobre tempo ou dinheiro gasto a jogar.</li>
+        <li>Usar o jogo para escapar a problemas pessoais ou emoções negativas.</li>
+        <li>Dificuldade em parar, mesmo após atingir limites definidos.</li>
+        <li>Contrair dívidas, vender bens ou pedir dinheiro para continuar a jogar.</li>
+      </ul>
+
+      <h2 id="ajuda">Onde Obter Ajuda</h2>
+      <p>
+        Se sente perda de controlo, procure apoio profissional. Estes recursos são gratuitos
+        ou de baixo custo e oferecem informação, aconselhamento e ferramentas de autoajuda:
+      </p>
+      <ul class="resources">
+        <li>SRIJ (Serviço de Regulação e Inspeção de Jogos): <a href="https://www.srij.turismodeportugal.pt/" target="_blank" rel="noopener noreferrer">srij.turismodeportugal.pt</a></li>
+        <li>BeGambleAware: <a href="https://www.begambleaware.org/" target="_blank" rel="noopener noreferrer">begambleaware.org</a></li>
+        <li>Gambling Therapy: <a href="https://www.gamblingtherapy.org/" target="_blank" rel="noopener noreferrer">gamblingtherapy.org</a></li>
+        <li>GamCare: <a href="https://www.gamcare.org.uk/" target="_blank" rel="noopener noreferrer">gamcare.org.uk</a></li>
+      </ul>
+
+      <p class="notice" role="note">
+        <strong>Nota importante:</strong> Se estiver em risco imediato ou a experienciar uma crise,
+        contacte os serviços de emergência locais. Jogue de forma responsável.
+      </p>
+    </div>
+
+    <style>
+      /* ---------- High-contrast, page-scoped styles for this guide ---------- */
+      .responsible {
+        color: #c5c5c5;
+        font-family: "Helvetica Neue", Helvetica, Arial, system-ui, sans-serif;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 1.6;
+        text-align: justify;
+      }
+      .responsible h2 {
+        margin: 22px 0 10px;
+        font-size: 26px;
+        line-height: 1.25;
+        font-weight: 700;
+        color: #ffffff;
+        scroll-margin-top: 96px;
+      }
+      .responsible p { margin: 0 0 12px; }
+      .responsible ul {
+        margin: 8px 0 16px 1.35rem;
+        padding: 0;
+      }
+      .responsible li { margin: 6px 0; }
+
+      /* Resource list & helpful hints */
+      .resources { list-style: disc; }
+      .responsible a {
+        color: #0ea5e9;
+        text-decoration: underline;
+        text-underline-offset: 2px;
+      }
+      .responsible a:hover { text-decoration-thickness: 2px; }
+      .responsible a:focus-visible {
+        outline: 2px dashed #0ea5e9;
+        outline-offset: 2px;
+      }
+
+      .heads{ margin-top: 1rem; font-size: 28px; }
+      .navlink { text-decoration: underline; text-underline-offset: 4px; }
+
+      /* Notice / callout */
+      .notice {
+        margin-top: 18px;
+        padding: 12px 14px;
+        background: #ecfdf5;
+        border: 1px solid #a7f3d0;
+        border-radius: 10px;
+        text-align: left;
+        color: #065f46;
+      }
+
+      /* Responsive */
+      @media (max-width: 900px) {
+        .responsible { font-size: 18px; line-height: 1.55; }
+        .responsible h2 { font-size: 22px; }
+      }
+
+      /* Print: show URLs and tidy spacing */
+      @media print {
+        .responsible a[href]::after {
+          content: " (" attr(href) ")";
+          font-size: 85%;
+        }
+        .responsible { text-align: left; }
+        .notice { background: none; border-color: #000; }
+      }
+    </style>
+  </ContentPanel>
+</BaseLayout>
