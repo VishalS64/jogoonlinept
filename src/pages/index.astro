@@ -5,42 +5,41 @@ import ContentPanel from "../components/ContentPanel.astro";
 
 /** Ratings are entered on a 0–5 scale; convert to 0–10 for <CasinoCard>. */
 const casinosRaw = [
-  {
-    name: "888 Casino",
-    logo: "/888-casino.png",
-    offer:
-      "Certificação SRIJ para máxima confiança\n" +
-      "Transações blindadas com encriptação avançada\n" +
-      "Assistência especializada sempre disponível",
-    rating: 4.7,
-    votes: 980,              // 👈 add
-    link: "https://www.888.pt/",
-    accentTop: true,
-  },
-  {
-    name: "Betano",
-    logo: "/Betano-Logo.png",
-    offer:
-      "Certificação SRIJ para máxima confiança\n" +
-      "Transações blindadas com encriptação avançada\n" +
-      "Assistência especializada sempre disponível",
-    rating: 4.8,
-    votes: 1823,              // 👈 add
-    link: "https://www.betano.pt/",
-  },
-  {
-    name: "BacanaPlay",
-    logo: "/bacanaplay-logo.png",
-    offer:
-      "Certificação SRIJ para máxima confiança\n" +
-      "Transações blindadas com encriptação avançada\n" +
-      "Assistência especializada sempre disponível",
-    rating: 4.5,
-    votes: 756,               // 👈 add
-    link: "https://www.888.pt/",
-  },
+	{
+		name: "888 Casino",
+		logo: "/888-casino.png",
+		offer:
+			"Certificação SRIJ para máxima confiança\n" +
+			"Transações blindadas com encriptação avançada\n" +
+			"Assistência especializada sempre disponível",
+		rating: 4.7,
+		votes: 980, // 👈 add
+		link: "https://www.888.pt/",
+		accentTop: true,
+	},
+	{
+		name: "Betano",
+		logo: "/Betano-Logo.png",
+		offer:
+			"Certificação SRIJ para máxima confiança\n" +
+			"Transações blindadas com encriptação avançada\n" +
+			"Assistência especializada sempre disponível",
+		rating: 4.8,
+		votes: 1823, // 👈 add
+		link: "https://www.betano.pt/",
+	},
+	{
+		name: "BacanaPlay",
+		logo: "/bacanaplay-logo.png",
+		offer:
+			"Certificação SRIJ para máxima confiança\n" +
+			"Transações blindadas com encriptação avançada\n" +
+			"Assistência especializada sempre disponível",
+		rating: 4.5,
+		votes: 756, // 👈 add
+		link: "https://www.bacanaplay.pt/",
+	},
 ];
-
 
 /** Normalize ratings: if <=5, treat as /5 and convert to /10. */
 const casinos = casinosRaw.map((c) => {
@@ -59,7 +58,9 @@ const casinos = casinosRaw.map((c) => {
 			</h2>
 
 			<p class="hero-sub">
-				Descubra os melhores cassinos online licenciados em Portugal. Avaliações imparciais, segurança garantida e diversão sem limites.
+				Descubra os melhores cassinos online licenciados em Portugal.
+				Avaliações imparciais, segurança garantida e diversão sem
+				limites.
 			</p>
 
 			<div class="cards">
@@ -78,36 +79,36 @@ const casinos = casinosRaw.map((c) => {
 		<!-- EXACT “1)” NUMBERING -->
 		<ol class="num">
 			<li>
-				Licenciamento e regulamentação: só listamos operadores com licença ativa do SRIJ.
+				Licenciamento e regulamentação: só listamos operadores com
+				licença ativa do SRIJ.
 			</li>
 			<li>
-				Segurança e proteção de dados: encriptação SSL, políticas de privacidade claras e auditorias.
+				Segurança e proteção de dados: encriptação SSL, políticas de
+				privacidade claras e auditorias.
 			</li>
 			<li>
-				Variedade de jogos: slots, mesa, casino ao vivo e fornecedores reconhecidos.
+				Variedade de jogos: slots, mesa, casino ao vivo e fornecedores
+				reconhecidos.
 			</li>
 			<li>
-				Bónus e promoções: termos transparentes, rollover justo e valor real.
+				Bónus e promoções: termos transparentes, rollover justo e valor
+				real.
 			</li>
 			<li>
-				Métodos de pagamento: opções populares em Portugal, rapidez de depósitos e levantamentos.
+				Métodos de pagamento: opções populares em Portugal, rapidez de
+				depósitos e levantamentos.
 			</li>
 			<li>
-				Suporte ao cliente: assistência em português, tempo de resposta e canais disponíveis.
+				Suporte ao cliente: assistência em português, tempo de resposta
+				e canais disponíveis.
 			</li>
 		</ol>
 
 		<h3 class="subhead">Por que escolher os nossos casinos</h3>
 		<ul class="bul">
-			<li>
-				Cassinos licenciados pelo SRIJ
-			</li>
-			<li>
-				Avaliações imparciais e detalhadas
-			</li>
-			<li>
-				Compromisso com o jogo responsável
-			</li>
+			<li>Cassinos licenciados pelo SRIJ</li>
+			<li>Avaliações imparciais e detalhadas</li>
+			<li>Compromisso com o jogo responsável</li>
 		</ul>
 
 		<!-- FAQ -->
@@ -118,13 +119,16 @@ const casinos = casinosRaw.map((c) => {
 					>Como faço para me registrar em um cassino online?</span
 				>
 				<p class="a">
-					Normalmente, clique em “Registar”, preencha os seus dados, verifique o email e faça a validação KYC (documento de identidade e prova de morada).
+					Normalmente, clique em “Registar”, preencha os seus dados,
+					verifique o email e faça a validação KYC (documento de
+					identidade e prova de morada).
 				</p>
 			</li>
 			<li>
 				<span class="q">Os cassinos apresentados são seguros?</span>
 				<p class="a">
-					Sim. Apenas recomendamos sites com licença SRIJ e protocolos de segurança atualizados.
+					Sim. Apenas recomendamos sites com licença SRIJ e protocolos
+					de segurança atualizados.
 				</p>
 			</li>
 			<li>
@@ -132,19 +136,23 @@ const casinos = casinosRaw.map((c) => {
 					>Quais métodos de pagamento estão disponíveis?</span
 				>
 				<p class="a">
-					Cartão bancário, transferência, MB Way, carteiras eletrónicas e, em alguns casos, Paysafecard. A disponibilidade varia por operador.
+					Cartão bancário, transferência, MB Way, carteiras
+					eletrónicas e, em alguns casos, Paysafecard. A
+					disponibilidade varia por operador.
 				</p>
 			</li>
 			<li>
-				<span class="q">•	Posso jogar no celular?</span>
+				<span class="q">Posso jogar no celular?</span>
 				<p class="a">
-					Sim. A maioria oferece sites responsivos e apps iOS/Android com a mesma segurança.
+					Sim. A maioria oferece sites responsivos e apps iOS/Android
+					com a mesma segurança.
 				</p>
 			</li>
 			<li>
-				<span class="q">•	O que é o SRIJ?</span>
+				<span class="q">O que é o SRIJ?</span>
 				<p class="a">
-					É o Serviço de Regulação e Inspeção de Jogos, a autoridade que licencia e fiscaliza o jogo online em Portugal.
+					É o Serviço de Regulação e Inspeção de Jogos, a autoridade
+					que licencia e fiscaliza o jogo online em Portugal.
 				</p>
 			</li>
 		</ul>
@@ -153,14 +161,13 @@ const casinos = casinosRaw.map((c) => {
 		<style>
 			/* Ensure consistent typography inside the panel */
 			.content-panel .cp-body {
-				font-family: "Helvetica Neue", Helvetica, Arial, system-ui,
-					sans-serif;
+				font-family:
+					"Helvetica Neue", Helvetica, Arial, system-ui, sans-serif;
 				font-weight: 400;
 				font-style: normal;
 				font-size: 20px;
 				line-height: 28px;
 				letter-spacing: 0;
-				text-align: justify;
 				color: #111827;
 			}
 			.lead {
@@ -267,7 +274,6 @@ const casinos = casinosRaw.map((c) => {
 					system-ui,
 					sans-serif;
 				letter-spacing: 0;
-				text-align: justify;
 			}
 
 			@media (max-width: 900px) {
@@ -296,7 +302,7 @@ const casinos = casinosRaw.map((c) => {
 				margin-left: -50vw;
 				margin-right: -50vw;
 				/* background: #0a0f12 url("/bg.png") no-repeat center top/cover; */
-				padding: 48px 0 0;
+				padding: 20px 0 0;
 				overflow: hidden;
 			}
 			/* .hero-bg::after {
@@ -321,8 +327,8 @@ const casinos = casinosRaw.map((c) => {
 				max-width: 1120px;
 				margin: 0 auto;
 				padding: 0 16px;
-				font-family: "Helvetica Neue", Helvetica, Arial, system-ui,
-					sans-serif;
+				font-family:
+					"Helvetica Neue", Helvetica, Arial, system-ui, sans-serif;
 				letter-spacing: 0;
 			}
 			.hero-title {
@@ -351,9 +357,11 @@ const casinos = casinosRaw.map((c) => {
 			@media (max-width: 900px) {
 				.hero-title {
 					font-size: 36px;
+					border: 0;
 				}
 				.hero-sub {
 					font-size: 20px;
+					display: none;
 				}
 			}
 		</style>
