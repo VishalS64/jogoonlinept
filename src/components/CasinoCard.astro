@@ -25,7 +25,7 @@ const {
     accentTop = false,
     rel,
     target,
-    tickSrc = "/tick.png",
+    tickSrc = "/tick.svg",
     starSrc = "/star.png",
 } = Astro.props as Props;
 
@@ -133,9 +133,9 @@ const targetAttr = target ?? (isExternal ? "_blank" : "_self");
                 class="greebtn btn btn-primary"
                 rel={relAttr}
                 target={targetAttr}
-                aria-label={`Get bonus at ${name}`}
+                aria-label={`Ganhe bônus at ${name}`}
             >
-                Get Bonus
+                Ganhe bônus
             </a>
             <a
                 href={link}
@@ -144,7 +144,7 @@ const targetAttr = target ?? (isExternal ? "_blank" : "_self");
                 target={targetAttr}
                 aria-label={`Visit ${name} site`}
             >
-                Visit Site
+                Visite o site
             </a>
         </div>
     </div>
@@ -362,7 +362,7 @@ const targetAttr = target ?? (isExternal ? "_blank" : "_self");
         background: #feb104;
         box-shadow: 0 8px 16px rgba(167, 157, 21, 0.28);
         border: 1px solid rgba(0, 0, 0, 0.18);
-        width: 175px;
+        width: 200px;
         height: 58px;
         font-size: 22px;
         font-weight: 700;
