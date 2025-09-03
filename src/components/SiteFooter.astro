@@ -20,7 +20,7 @@ interface Props {
   logoAlt?: string;
   /** Left-column links */
   links?: QuickLink[];
-  /** Responsible gambling / trust badges */
+  /** Jogo Responsável / trust badges */
   badges?: Badge[];
   /** Optional custom disclosure text */
   disclosure?: string;
@@ -29,9 +29,9 @@ interface Props {
 }
 
 const defaultLinks: QuickLink[] = [
-  { label: "Terms of use", href: "/terms-of-use" },
-  { label: "Responsible Gambling", href: "/responsible-gambling" },
-  { label: "Privacy Policy", href: "/privacy-policy" },
+  { label: "Termos de Uso", href: "/terms-of-use" },
+  { label: "Jogo Responsável", href: "/responsible-gambling" },
+  { label: "Política de Privacidade", href: "/privacy-policy" },
 ];
 
 const defaultBadges: Badge[] = [
@@ -83,7 +83,7 @@ const {
   links = defaultLinks,
   badges = defaultBadges,
   disclosure = `Esta plataforma oferece informação especializada sobre operadores autorizados pelo SRIJ (Serviço de Regulação e Inspeção de Jogos) em Portugal. Não operamos diretamente serviços de jogo online.`,
-  linksHeading = "Quick Link",
+  linksHeading = "Link Rápido",
 } = Astro.props as Props;
 
 const year = new Date().getFullYear();
@@ -91,8 +91,8 @@ const year = new Date().getFullYear();
 
 <footer class="site-footer-extended" aria-labelledby="footer-heading">
   <div class="footer-inner">
-    <!-- Left column: Quick links -->
-    <nav class="links" aria-label="Quick links">
+    <!-- Left column: Link Rápidos -->
+    <nav class="links" aria-label="Link Rápidos">
       <h2 id="footer-heading" class="links-title">{linksHeading}</h2>
       <ul class="links-list">
         {links.map((l) => (
@@ -116,7 +116,7 @@ const year = new Date().getFullYear();
 
       <p class="copy">{disclosure}</p>
 
-      <div class="badges" aria-label="Responsible gambling and safety badges">
+      <div class="badges" aria-label="Jogo Responsável and safety badges">
         {badges.map((b) => {
           const img = (
             <img
@@ -168,7 +168,7 @@ const year = new Date().getFullYear();
   gap:48px;
 }
 
-/* Left: Quick Links */
+/* Left: Link Rápidos */
 .links-title{
   margin:0 0 16px;
   color:#ffffff;
